@@ -1,4 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Lato:wght@300&family=Oswald&display=swap');
+
 .navbar {
     width: 60%;
     margin: 0 auto;
+}
+
+
+
+#menu {
+    background-color: #5C4033;
+    opacity: 0.95;
+    padding: 4%;
+    font-family: 'Hina Mincho', serif;
+    font-size: 18px;
+}
+
+.section-title p {
+    font-size: 48px;
+    color: pink;
+}
+
+.menu-content a,
+.menu-ingredients {
+    color: white;
+}
+
+.menu-content a {
+    text-decoration: none;
+    color: pink;
+}
+
+.menu-content span {
+    font-weight: 700;
+    color: black;
 }
