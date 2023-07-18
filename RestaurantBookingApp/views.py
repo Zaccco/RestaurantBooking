@@ -4,7 +4,7 @@ from .models import Reservation
 from django.contrib import messages
 
 
-# Create your views here.
+# Create your views here
 def home(request):
     """
     This is the view for the homepage that renders index.html
