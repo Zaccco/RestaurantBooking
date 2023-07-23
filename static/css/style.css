@@ -39,3 +39,27 @@
     background-color: #e75480;
     color: white;
 }
+
+.alert-bar {
+    background-color: #5C4033;
+    border: 1px solid pink;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.9;
+    z-index: 999;
+  }
+
+  #start-book {
+    width: 10%;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 25px;
+    background-color: #5C4033;
+    color: pink;
+    font-size: 24px;
+    text-align: center;
+  }
