@@ -5,8 +5,6 @@
     margin: 0 auto;
 }
 
-
-
 #menu {
     background-color: #5C4033;
     opacity: 0.95;
@@ -33,4 +31,11 @@
 .menu-content span {
     font-weight: 700;
     color: black;
+}
+
+/* Signup */
+
+.btn-signup {
+    background-color: #e75480;
+    color: white;
 }
