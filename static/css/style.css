@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Lato:wght@300&family=Oswald&display=swap');
 
+body {
+    padding-bottom: 114px;
+}
+
 .navbar {
     width: 100%;
     margin-left: 25%;
 }
 
-  /* Style the links inside the navigation bar */
 .navbar a {
     color: black;
     text-align: center;
@@ -59,16 +62,56 @@
     text-align: center;
     opacity: 0.9;
     z-index: 999;
-  }
+}
 
-  #start-book {
-    width: 10%;
+#start-book {
+    width: 15%;
     margin: 0 auto;
-    margin-top: 10px;
     height: 60px;
-    border-radius: 25px;
-    background-color: #5C4033;
-    color: pink;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid pink;
+    color: black;
     font-size: 24px;
     text-align: center;
-  }
+}
+
+#about, #contact {
+    background-color: #5C4033;
+    opacity: 0.95;
+    padding: 75px 25px;
+}
+
+#about h3,
+#contact h3 {
+    text-align: center;
+    color: pink;
+}
+
+#about p {
+    font-size: 32px;
+    color: white;
+    margin: 0 15rem;
+    text-align: center;
+    line-height: 5rem;
+}
+
+#contact p {
+    font-size: 18px;
+    margin: 0 15rem;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+}
+
+
+footer {
+    background-color: #5C4033;
+    opacity: 0.95;
+    font-size: 2rem;
+}
+
+footer i {
+    font-size: 2rem;
+    padding: 25px;
+}
