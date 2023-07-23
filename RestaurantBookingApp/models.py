@@ -38,6 +38,9 @@ class Reservation(models.Model):
     additional_info = models.TextField("Please provide any speciel requests or allergies", blank=True, null=True)
 
     class Meta:
+        """
+        Sorts the bookings in decending order
+        """
         ordering = ['-date']
 
     def __str__(self):

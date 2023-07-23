@@ -21,8 +21,8 @@
                   <p>Total people: {{ booking.guests }}</p>
                   <p>Special Requests: {{ booking.additional_info }}</p>
                 </p>
+                <!-- Buttons to update and delete bookings -->
                 <a href="/edit/{{booking.id}}" class="btn btn-secondary">Update</a>
-                <!-- Button trigger modal -->
                 <a href="/delete/{{booking.id}}" class="btn btn-warning">Delete</a>
               </div>
             </div>

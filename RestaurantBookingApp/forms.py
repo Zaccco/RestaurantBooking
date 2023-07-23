@@ -7,6 +7,9 @@ class DateInput(forms.DateInput):
 
 class ReservationForm(forms.ModelForm):
     class Meta:
+        """
+        Decides the format of the booking form
+        """
         model = Reservation
         fields = ['date', 'time', 'guests', 'additional_info']
         widgets = {

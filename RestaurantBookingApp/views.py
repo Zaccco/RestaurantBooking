@@ -17,7 +17,8 @@ def booking_page(request):
     """
     The view for the booking page. If the user is logged in, the my bookings page
     will show up, if the user is not logged in, it will be redirected to the
-    login/signup page.
+    login/signup page. There is no way to access this page without being logged in without 
+    directly typing in the url
     """
     if request.method == 'POST':
         form = ReservationForm(data=request.POST)
@@ -39,6 +40,10 @@ def booking_page(request):
 
 
 def my_bookings_page(request):
+    """
+    If the user is authenticated/logged in, the users bookings will show, if not they
+    will be redirected to the signup page
+    """
     if request.user.is_authenticated:
         bookings = Reservation.objects.filter(user=request.user)
         context = {
@@ -49,6 +54,9 @@ def my_bookings_page(request):
         return redirect('../accounts/signup')
 
 def edit_booking(request, booking_id):
+    """
+    A way for the user to change any booking that they have already made
+    """
     booking = get_object_or_404(Reservation, id=booking_id)
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=booking)
@@ -63,6 +71,9 @@ def edit_booking(request, booking_id):
 
 
 def delete_booking(request, booking_id):
+    """
+    A way for the user to delete any booking that they have previously made
+    """
     booking = get_object_or_404(Reservation, id=booking_id)
     booking.delete()
     return redirect('my_bookings_page')

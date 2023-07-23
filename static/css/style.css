@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Lato:wght@300&family=Oswald&display=swap');
 
+/* Padding for footer */
 body {
     padding-bottom: 114px;
 }
+
+/* Navbar */
 
 .navbar {
     width: 100%;
@@ -17,17 +20,14 @@ body {
     font-size: 20px;
 }
 
+/* Menu */
+
 #menu {
     background-color: #5C4033;
     opacity: 0.95;
     padding: 4%;
     font-family: 'Hina Mincho', serif;
     font-size: 18px;
-}
-
-.section-title p {
-    font-size: 48px;
-    color: pink;
 }
 
 .menu-content a,
@@ -45,12 +45,19 @@ body {
     color: black;
 }
 
+.section-title p {
+    font-size: 48px;
+    color: pink;
+}
+
 /* Signup */
 
 .btn-signup {
     background-color: #e75480;
     color: white;
 }
+
+/* Message alert bar */
 
 .alert-bar {
     background-color: #5C4033;
@@ -64,6 +71,8 @@ body {
     z-index: 999;
 }
 
+/* Home page book a table button */
+
 #start-book {
     width: 15%;
     margin: 0 auto;
@@ -75,6 +84,8 @@ body {
     font-size: 24px;
     text-align: center;
 }
+
+/* About and Contact */
 
 #about, #contact {
     background-color: #5C4033;
@@ -104,6 +115,7 @@ body {
     line-height: 2rem;
 }
 
+/* Footer */
 
 footer {
     background-color: #5C4033;
