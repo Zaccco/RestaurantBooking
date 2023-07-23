@@ -13,7 +13,7 @@ def home(request):
     return render(request, 'index.html')
 
 
-def booking_page():
+def booking_page(request):
     """
     The view for the booking page. If the user is logged in, the my bookings page
     will show up, if the user is not logged in, it will be redirected to the
@@ -47,3 +47,22 @@ def my_bookings_page(request):
         return render(request, 'mybookings.html', context)
     else:
         return redirect('../accounts/signup')
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Reservation, id=booking_id)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('my_bookings_page')
+    form = ReservationForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_booking.html', context)
+
+
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Reservation, id=booking_id)
+    booking.delete()
+    return redirect('my_bookings_page')

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- This page was inspired by ErikHGMs FireHouse Project. I used his bootstrap functionality on this page to help make it look better.-->
+<!-- Shows all the booking that are made by the logged in user -->
+<section>
+  <div class="container height mt-5 pt-5">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h3>Manage Bookings</h3>
+        <div class="container">
+          <div class="row">
+            {% for booking in bookings %}
+            <div class="card text-white bg-dark text-center border-secondary" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title mb-3">These are your current bookings:</h5>
+                <h6 class="card-subtitle text-white">{{ booking.first_name }}</h6>
+                <p class="card-text">
+                  <p>On: {{ booking.date }}</p>
+                  <p>At: {{ booking.time }}</p>
+                  <p>Total people: {{ booking.guests }}</p>
+                  <p>Special Requests: {{ booking.additional_info }}</p>
+                </p>
+                <a href="/edit/{{booking.id}}" class="btn btn-secondary">Update</a>
+                <!-- Button trigger modal -->
+                <a href="/delete/{{booking.id}}" class="btn btn-warning">Delete</a>
+              </div>
+            </div>
+            <!-- Show message if there are no bookings -->
+            {% empty %} <p>You have no reservations currently</p>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

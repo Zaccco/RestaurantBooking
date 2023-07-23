@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+  <div class="container height mt-5 pt-5">
+    <div class="row">
+      <div class="col-md-8 md-3 offset-md-2">
+        {% if user.is_authenticated %}
+        <h3>Edit a booking</h3>
+
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="account-btn" type="submit">Update</button>
+        </form>
+        {% else %}
+        <p>To make a reservation, please <a href="{% url 'account_login' %}">Login</a>. If you don't have an account please, 
+        <a href="{% url 'account/signup' %}">Sign Up</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

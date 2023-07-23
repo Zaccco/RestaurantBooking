@@ -48,7 +48,8 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">About</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Contact Us</a></li>
           {% if user.is_authenticated %}
-          <li class="nav-item"><a class="nav-link" href="#">My bookings</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'my_bookings_page' %}">My bookings</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'booking_page' %}">Book a table</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
           <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
