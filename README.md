@@ -95,6 +95,7 @@ An agile approach was taken when creating this project. By assigning user storie
 * Make it so that when trying to make a booking, only available times for when the resturant is not full is being displayed.
 * Further improve the styling of the website to make it more appealing to visitors
 * Create a function in the admin panel so that an admin can change the menu or add in different menus for lunch and dinner.
+* A pop-up warning for the user if they try to delete a booking to make sure they accidentally don't do it.
 
 ## Technologies Used
 
