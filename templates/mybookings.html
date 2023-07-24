@@ -13,10 +13,9 @@
             {% for booking in bookings %}
             <div class="card text-white bg-dark text-center border-secondary" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title mb-3">These are your current bookings:</h5>
-                <h6 class="card-subtitle text-white">{{ booking.first_name }}</h6>
+                <h5 class="card-title mb-3">Your Booking</h5>
+                <h6 class="card-subtitle text-white">{{ booking.date }}</h6>
                 <p class="card-text">
-                  <p>On: {{ booking.date }}</p>
                   <p>At: {{ booking.time }}</p>
                   <p>Total people: {{ booking.guests }}</p>
                   <p>Special Requests: {{ booking.additional_info }}</p>

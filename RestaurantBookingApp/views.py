@@ -51,7 +51,7 @@ def my_bookings_page(request):
         }
         return render(request, 'mybookings.html', context)
     else:
-        return redirect('../accounts/signup')
+        return redirect('../account/signup')
 
 def edit_booking(request, booking_id):
     """
