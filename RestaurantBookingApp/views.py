@@ -30,7 +30,7 @@ def booking_page(request):
             return redirect('my_bookings_page')
         else:
             messages.error(
-                request, 'Inavlid info'
+                request, 'Invalid info, date cannot be in the past!'
             )
     form = ReservationForm()
     context = {

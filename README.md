@@ -4,7 +4,7 @@
 
 The goal for this project was to create a fictional sushi restaurant with a functional booking system, a menu, and some other information about the restaurant. The user can signup to be able to make bookings to the restaurant with some key information such as: what time they want to book the table, how many guests and if they have any allergies, special requests etc. 
 
-The live link can be found here: [Sushi Restaurant]()
+The live link can be found here: [Sushi Restaurant](https://restaurant-booking-app-p4-62d98244b1cc.herokuapp.com/)
 
 ## User Experience (UX)
 
