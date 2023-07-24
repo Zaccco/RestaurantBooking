@@ -208,8 +208,6 @@ The goal of this project was to build a working booking system for a fictional r
         * As soon as the user logs in from the login page, the navigation bar will update and new links to book a table or view my bookings will appear.
     * As a frequent user I can find my current bookings.
         * If the user locates to the my bookings page after logging in, all bookings the user has made will be shown.
-    
-## Deployment
 
 ## Deployment
 The site was deployed using Heroku. The steps to deploy are:
