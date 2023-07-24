@@ -35,7 +35,7 @@ class Reservation(models.Model):
     guests = models.IntegerField("Number of people")
     date = models.DateField()
     time = models.CharField("Arrival time", max_length=30, choices=TIME_OPTIONS, default="18:00")
-    additional_info = models.TextField("Please provide any speciel requests or allergies", blank=True, null=True)
+    additional_info = models.TextField(default="Additional Info (special requests, allergies etc.)", blank=True, null=True)
 
     class Meta:
         """

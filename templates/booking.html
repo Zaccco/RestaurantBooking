@@ -13,7 +13,7 @@
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
-          <button class="account-btn" type="submit">Done</button>
+          <button class="account-btn btn-signup" type="submit">Done</button>
         </form>
         <!-- If the user is not logged in, it will be asked to login/signup before being able to make a booking -->
         {% else %}
