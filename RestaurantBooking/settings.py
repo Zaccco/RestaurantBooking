@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['restaurant-booking-app-p4-62d98244b1cc.herokuapp.com', 'localhost', '8000-zaccco-restaurantbookin-33mv0optcb3.ws-eu102.gitpod.io']
 
