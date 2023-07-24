@@ -127,22 +127,118 @@ An agile approach was taken when creating this project. By assigning user storie
 
 ## Testing
 
-* Manual testing has been done for the website. Every link that a user can access from the homepage works as expected. The only issues I could find with the functionality would be if the user tried to write urls that they would not have access to. For example if an anonymous user tries to access links that only logged in users should have access to, the redirecting of that can sometimes not work as expected. 
-* All the links in the navbar work as expected
-* The login/signup form both work as expected and the users information is stored in the database so that they can just login in the next time they visit.
-* The booking form works well, after a user saves the booking, the booking is displayed in the my bookings page.
+#### Menu page
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Customer can view menu page | See if the menu page is visible from the homepage | Being able to open and browse the menu without errors | PASS |
+
+#### Registration 
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Customer signup page | From the navigation bar, click signup | Customer is directed to the signup page | PASS |
+| Customer signup - Form validation | Submit empty form | Form validation prompts the user | PASS |
+| Customer signup - Form validation | Try to submit invalid password | Form validation prompts the user | PASS |
+| Customer signup - Form validation | Try to submit non matching passwords | Form validation prompts the user | PASS |
+| Customer signup - Form validation | Submit already taken username | Form validation prompts the user | PASS |
+| Customer login page | From the navigation bar, click on the login button | Customer is directed to the login page | PASS |
+| Customer login - Form validation | Submit incorrect password | Form validation prompts the user | PASS |
+| Customer login - Form validation | Submit incorrect name | Form validation prompts the user | PASS |
+| Customer Logout page | From the navigation bar the logout button was pressed | User is taken to a screen to validate that they are sure about logging out | PASS |
+| Customer Logout page | After clicking logout and being taken to the are you sure page and clicking sign out | User is being signed out and taken back to homepage | PASS |
+
+#### Bookings 
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Form validation Booking page | Check that each required field is working | Form validation prompts the user | PASS |
+| Submit button Booking page | Click the submit button to check that the booking is saved | Success message and redirect to mybooking page | PASS |
+| Bookings are shown on mybookings page | Check that each booking for a user are shown on the mybookings page | Individual cards of each booking is shown with the corresponding booking details | PASS |
+| Bookings can be updated | Check that the update button works and that the updated booking is submitted to the mybooking page when edited | Booking is updated with the corresponding booking details | PASS |
+| Bookings can can be deleted | Check that the delete button works and that the deleted booking is removed from the mybooking page when deleted | Mybooking list is updated | PASS |
+
+#### Navbar
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Navbar | Check that each link is working correctly | Customer is able to open each link to browse the webpage for information about the restaurant | PASS |
+
+#### Admin
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Admin login - Form validation | Submit incorrect password | Form validation prompts the user | PASS |
+| Admin login - Form validation | Submit incorrect name | Form validation prompts the user | PASS |
+| Admin login - Form validation | Submit incorrect name | Form validation prompts the user | PASS |
+
+## Further Testing
+
+* The website was tested on different browsers such as, Google Chrome, Safari and Mozilla Firefox. Extensive testing was done to make sure that all the navigation links and all the functionality of the website still works.
+* W3C Markup Validator
+    * No errors or warnings were found on any page
+* W3C CSS Validator
+    * No error or warnings were found
+* Python Validator
+    * No error or warning that was relevant was shown
 
 ### Fixed Bugs
 
 * A problem where when changing from ElephantSQL to SQLite made it so the previous users where not stored in the database anymore.
-* CSS styling did not show up on heroku
+* CSS styling did not show up when deploying to Heroku
 
 ### Remaining Bugs
 
 * The social media links in the footer are not clickable
 * The redirecting of when a user tries to access pages via typing in a manual url where they shouldn't have access to can sometimes break the website.
+* The burger menu doesn't show up as it should on smaller screens. I tried to fix this by creating a seperate menu for mobile and then having a class that displays none on larger screens and displays on smaller. However when I tried to add the class to the navigation and add the css styling, something broke and the css file was not being read anymore when I ran the website. There were no faults or error messages, but for some reason it didn't read the css file anymore so therefore I couldn't fix the burger menu like I indented to.
+
+### Testing User Stories
+
+* First Time Visitor Goals
+    * As a first time visitor I can signup to the booking system in order to in the future be able to create bookings.
+        * The signup button is easily accesible from the navigation menu on all pages when a user isn't already logged in. And the signup form is easy to understand and works as expected
+    * As a first time visitor I can read the menu to see if the food is interesting and appealing.
+        * The menu is located on the home page and is the first thing a user sees when accessing it.
+    * As a first time visitor I can learn about the restaurant, some key information and location as well as how to get in contact via email, phone or social media.
+        * All the information regarding location, contact etc. is found on the home page if the user scrolls down or by clicking in the navigation bar
+* Returning Visitor Goals
+    * As a returning visitor I can create an account so that in the future I can make my first booking
+        * From the navigation menu the signup button is located or if a user tries to log in without an account they will be shown a link to the signup form.
+    * As a returning visitor I can check the menu to see if there are any specials or if the menu has changed.
+        * The menu is located on the home page.
+* Frequent User Goals
+    * As a frequent user I can login to manage already existing bookings.
+        * As soon as the user logs in from the login page, the navigation bar will update and new links to book a table or view my bookings will appear.
+    * As a frequent user I can find my current bookings.
+        * If the user locates to the my bookings page after logging in, all bookings the user has made will be shown.
+    
+## Deployment
 
 ## Deployment
+The site was deployed using Heroku. The steps to deploy are:
+- Install Django & Gunicorn:
+```pip3 install 'django<4' gunicorn```
+- Install Django database & psycopg:
+```pip3 install dj_database_url psycopg2```
+- Creating the requirements.txt file with the following command:
+```pip3 freeze --local > requirements.txt```
+- a django project was created using:
+```django-admin startproject Restaurant .```
+- the restaurantapp app was then created with:
+```python3 manage.py startapp RestaurantApp```
+- These were then added to the settings.py file within our project directory.
+- the changes were then migrated using:
+```python3 manage.py migrate```
+- After that go to [Heroku](www.heroku.com) & created a new app called RestaurantApp.
+- added the Heroku Postgres database to the Resources tab.
+- navigated to the Settings Tab, to add the following key/value pairs to the configvars:
+1. key: SECRET_KEY | value: your own private secret_key
+2. key: PORT | value: 8000
+4. key: DATABASE_URL | value: value supplied by Heroku
+- added the DATABASE_URL & SECRET_KEY to the env.py file
+- added the DATABASE_URL & SECRET_KEY to the settings.py file
+- add an import os statement for the env.py file.
+- added Heroku to the ALLOWED_HOSTS in settings.py
+- created the Procfile
+- pushed the project to Github
+- connected my github account to Heroku through the Deploy tab
+- connected my github project repository, and then clicked on the "Deploy" button
 
 ## Credits
 
