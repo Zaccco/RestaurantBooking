@@ -27,7 +27,7 @@ The goal of this project was to build a working booking system for a fictional r
 
 ### Agile Methodology
 
-An agile approach was taken when creating this project. By assigning user stories to common issues and taking advantage of the GitHub Kanban board and its features, the process of making sure that everything that was needed was included in the project in order to make a user friendly and accesible.
+* An agile approach was taken when creating this project. By assigning user stories to common issues and taking advantage of the GitHub Kanban board and its features, the process of making sure that everything that was needed was included in the project in order to make a user friendly and accesible.
 
 ### Design
 
@@ -168,7 +168,7 @@ An agile approach was taken when creating this project. By assigning user storie
 | Admin login - Form validation | Submit incorrect name | Form validation prompts the user | PASS |
 | Admin login - Form validation | Submit incorrect name | Form validation prompts the user | PASS |
 
-## Further Testing
+### Further Testing
 
 * The website was tested on different browsers such as, Google Chrome, Safari and Mozilla Firefox. Extensive testing was done to make sure that all the navigation links and all the functionality of the website still works.
 * W3C Markup Validator
@@ -251,3 +251,6 @@ The site was deployed using Heroku. The steps to deploy are:
 
 ### Content
 * [ChatGPT](https://openai.com/chatgpt) was used to create the about us and contact section for a fake sushi restaurant.
+
+### Acknowledgements
+* My mentor Martina for her support and help throughout
